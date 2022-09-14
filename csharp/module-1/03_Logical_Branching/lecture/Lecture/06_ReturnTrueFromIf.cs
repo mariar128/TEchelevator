@@ -11,10 +11,10 @@
         {
             if (true)
             {
-                return false;
+                return true;
             }
 
-            return false;
+            return false; // unreachable code, true is true so this will never be run
         }
     }
 }

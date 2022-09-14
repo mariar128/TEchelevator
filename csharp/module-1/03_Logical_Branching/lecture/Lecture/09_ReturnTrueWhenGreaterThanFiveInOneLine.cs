@@ -8,7 +8,8 @@
         */
         public bool ReturnTrueWhenGreaterThanFiveInOneLine(int number)
         {
-            return false; // What can we put here that returns a bool that we want?
+            // return true when number is greater than 5 
+            return (number > 5); // What can we put here that returns a bool that we want?
         }
     }
 }

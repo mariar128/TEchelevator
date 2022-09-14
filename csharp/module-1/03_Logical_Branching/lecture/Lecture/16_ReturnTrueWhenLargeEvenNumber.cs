@@ -10,7 +10,15 @@
         */
         public string ReturnBigEvenNumber(int number)
         {
-            return null;
+            if(number % 2 == 0 && number > 100 && number % 5 == 0) // number divided by two has zero remainder if even, and number is over 100, and number divided by five is 
+            {
+                return "Big Even Number";
+            }
+            else if(number > 100) // if line 13 fails, check if the number is over 100 specifically
+            {
+                return "Big Number";
+            }
+            return "";
         }
     }
 }

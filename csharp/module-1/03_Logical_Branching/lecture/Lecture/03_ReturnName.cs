@@ -9,7 +9,7 @@
         */
         public string ReturnName()
         {
-            return null;
+            return "Maria";
         }
     }
 }

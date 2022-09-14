@@ -11,16 +11,17 @@
         */
         public int ReturnNumberAfterAddThreeAndAddFive(int number, bool addThree, bool addFive)
         {
-            if (true)
+            if (addThree == true)
             {
                 number = number + 3;
             }
 
             // Why can't we use an else here?
+            // Because the two conditions are mutually exclusive (addFive doesnt become true just bc addThree is false)
 
-            if (true)
+            if (addFive == true)
             {
-                number += 5;
+                number += 5; // same as: number = number + 5
             }
 
             return number;
