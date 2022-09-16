@@ -29,7 +29,18 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateStayTotal(int numberOfNights)
         {
-            return 0;
+            double DailyRate = (99.99);
+            double discountTotalAmount = (numberOfNights * DiscountRate);
+            double totalAmount = numberOfNights * DailyRate;
+           if (numberOfNights <= 2)
+            {
+                return totalAmount;
+            }
+            else
+            {
+                return discountTotalAmount;
+            }
+          
         }
 
         /*
@@ -48,7 +59,21 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateStayTotal(int numberOfNights, int numOfWeekendNights)
         {
-            return 0;
+            double WeekdayRate = (99.99);
+            double discountWeekDayRate = (89.99);
+            double WeekendRate = (99.99);
+            if (numberOfNights <= 2)
+            {
+                return WeekdayRate;
+            }
+            else
+            {
+                return discountWeekDayRate;
+            }
+              
+
+        
+             
         }
 
         /*
@@ -70,7 +95,16 @@ namespace TechElevator.Exercises.LogicalBranching
         */
         public double CalculateStayTotal(int numberOfNights, int numOfWeekendNights, bool isRewardsMember)
         {
-            return 0;
+            double totalAmount = 89.99;
+            double totalForNotRewardMember = 99.99;
+            if (isRewardsMember)
+
+            {
+                return totalAmount;
+            }
+            else
+                return totalForNotRewardMember;
+
         }
     }
 }

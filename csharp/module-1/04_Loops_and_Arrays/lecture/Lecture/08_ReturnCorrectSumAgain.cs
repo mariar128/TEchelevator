@@ -12,7 +12,8 @@
             int sum = 0;
 
             //     Start;       Keep going while         Increment by one;
-            for (int i = 0; i <= arrayToLoopThrough.Length; i++)
+            for (int i = 0; i < arrayToLoopThrough.Length; i++)
+                // could also do i<= arrayToLoopThrough.Length - 1 could fix it
             {
                 sum = sum + arrayToLoopThrough[i];
             }

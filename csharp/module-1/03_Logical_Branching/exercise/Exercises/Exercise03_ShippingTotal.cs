@@ -24,7 +24,17 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateShippingTotal(int weightInPounds)
         {
-            return 0;
+
+            if (weightInPounds >= 40)
+
+            { 
+                return (40 * .5) + (weightInPounds - 40) * .75;
+            }
+            else
+            
+            {
+                return (weightInPounds * .5); 
+            }
         }
 
         /*
@@ -41,7 +51,29 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateShippingTotal(int weightInPounds, bool hasDiscount)
         {
-            return 0;
+
+            double regularPrice;
+            if (weightInPounds >= 40)
+
+            {
+                regularPrice= (40 * .5) + (weightInPounds - 40) * .75;
+            }
+            else
+
+            {
+                regularPrice= (weightInPounds * .5);
+            }
+
+            
+            if (hasDiscount == true)
+            {
+                return regularPrice - (regularPrice * .10);
+                
+            }
+           else
+            {
+                return regularPrice;
+            }
         }
 
         /*
@@ -56,7 +88,19 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateShippingTotal(int weightInPounds, double discountPercentage)
         {
-            return 0;
+            double regularPrice;
+            if (weightInPounds >= 40)
+
+            {
+                regularPrice = (40 * .5) + (weightInPounds - 40) * .75;
+            }
+            else
+
+            {
+                regularPrice = (weightInPounds * .5);
+            }
+            double discountAmount = (regularPrice * discountPercentage);
+            return regularPrice - discountAmount;
         }
     }
 }

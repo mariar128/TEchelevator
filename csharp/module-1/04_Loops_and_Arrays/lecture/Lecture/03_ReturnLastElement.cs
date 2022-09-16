@@ -10,7 +10,9 @@
         {
             int[] portNumbers = { 80, 8080, 443 };
 
-            return 0;
+            return portNumbers[2];
+            // return portNumbers.[portNumbers.Length - 1]
+            // return portNumbers.[^1]; ^ + however many from the length
         }
     }
 }

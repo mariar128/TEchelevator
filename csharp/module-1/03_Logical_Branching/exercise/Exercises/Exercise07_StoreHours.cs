@@ -19,7 +19,12 @@ namespace TechElevator.Exercises.LogicalBranching
      *      2pm = 14...
      *      11pm = 23
      *      12am = 0
-     */
+     
+    if (storeIsOpen >= openTime) {
+    return true {
+    else {
+    return false
+    }
     public class StoreHours
     {
 
@@ -32,8 +37,11 @@ namespace TechElevator.Exercises.LogicalBranching
          * isStoreOpen(17) ➔ false
          * isStoreOpen(22) ➔ false 
          */
+    public class StoreHours
+    {
         public bool IsStoreOpen(int currentHour)
         {
+            if ()
             return false;
         }
 

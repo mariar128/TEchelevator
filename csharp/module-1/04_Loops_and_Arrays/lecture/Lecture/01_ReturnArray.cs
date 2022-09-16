@@ -10,7 +10,8 @@
         */
         public int[] ReturnNewArray()
         {
-            return null;
+            int[] firstArray = new int[73];
+            return firstArray;
         }
 
 
@@ -22,18 +23,20 @@
         */
         public int[] ReturnArrayOfKnownSize()
         {
-            return null;
+            int[] secondArray = new int[100];
+            return secondArray;
         }
 
         /*
         1c. This method expects an array of strings size n to be returned.
-            As long as the array size is set to an integer, its ok to not know when we create it.
+            As long as the array size is set to an integer, its ok to not know the value when we create it.
 
             TOPIC: Array Creation
         */
         public string[] ReturnArrayOfUnknownSize(int n)
         {
-            return null;
+            string[] thirdArray = new string[n];
+            return thirdArray; 
         }
 
 

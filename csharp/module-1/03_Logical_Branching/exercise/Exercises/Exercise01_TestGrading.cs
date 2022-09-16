@@ -18,11 +18,30 @@ namespace TechElevator.Exercises.LogicalBranching
          * gradeTestPassFail(90) ➔ true
          * gradeTestPassFail(70) ➔ true
          * gradeTestPassFail(45) ➔ false
+        
+      
+
          */
+
+
         public bool GradeTestPassFail(int score)
         {
-            return false;
-        }
+
+            if (score >= 70)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+                
+         }
+
+
+
+         
 
         /*
          * Grade-o-matic received numerous requests from customers to grade using a point-based system.
@@ -41,8 +60,17 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public int GradeTestNumeric(int score)
         {
-            return 0;
+            if (score >= 90)
+            { return 3;  }
+            if (score >= 50)
+            { return 2; }
+            if (score >= 25)
+            { return 1; }
+            else 
+            { return 0; }
+            
         }
+        
 
         /*
          * Grade-o-matic has received even more requests to grade using the classic letter scale.
@@ -60,7 +88,17 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public char GradeTestLetter(int score)
         {
-            return ' ';
+            if (score >= 90)
+            { return 'A'; }
+            if (score >= 80)
+            { return 'B'; }
+            if (score >= 70)
+            { return 'C'; }
+            if (score >= 60)
+            { return 'D'; }
+            else
+            { return 'F'; }
+          
         }
     }
 }

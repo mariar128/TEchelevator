@@ -18,6 +18,14 @@ namespace TechElevator.Exercises.LogicalBranching
          * Given two boolean values, hasPermit and withLicensedPassenger,
          * write an expression that is true if a person can drive.
          * 
+        
+         if (hasPerfmit && withLicensedPassenger)
+        {
+        // canDrive
+     
+      return true;
+        }
+         
          * canDrive(true, true) ➔ true
          * canDrive(true, false) ➔ false
          * canDrive(false, true) ➔ false
@@ -25,7 +33,17 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public bool CanDrive(bool hasPermit, bool withLicensedPassenger)
         {
-            return false;
+        
+        if (hasPermit && withLicensedPassenger)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        
         }
 
         /*
@@ -35,9 +53,19 @@ namespace TechElevator.Exercises.LogicalBranching
          * canDrive(true, true, 22) ➔ true
          * canDrive(true, true, 19) ➔ false
          * canDrive(false, true, 23) ➔ false
+        if (canDrive >= 21) 
+        {
+        return true;
+        {
+        else {
+        return false;
+        }
          */
         public bool CanDrive(bool hasPermit, bool withLicensedPassenger, int passengerAge)
         {
+            if (hasPermit && withLicensedPassenger && passengerAge >= 21)
+            { return true; }
+       
             return false;
         }
 
@@ -52,7 +80,28 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public bool CanDrive(bool hasPermit, bool withLicensedPassenger, int passengerAge, bool isPassengerOurGuardian)
         {
-            return false;
+          
+                if (hasPermit && withLicensedPassenger && isPassengerOurGuardian && passengerAge >= 18)
+                { return true; }
+            else
+            { return false; }
+            
+             
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

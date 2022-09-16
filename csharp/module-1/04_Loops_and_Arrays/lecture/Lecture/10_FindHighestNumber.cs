@@ -9,7 +9,21 @@
         */
         public int FindTheHighestNumber(int[] randomNumbers)
         {
-            return 0;
+            int highestValue = randomNumbers[0];
+           
+            // loop through the array
+            
+            for(int i = 0; i < randomNumbers.Length; i++)
+            {
+                int currentValue = randomNumbers[i];
+                // compare numbers using an if statement
+                if (currentValue > highestValue)
+                {
+                    highestValue = currentValue; // set highestValue if the currentValue is higher than the existing highest value
+                }    
+
+            }
+            return highestValue;
         }
     }
 }
