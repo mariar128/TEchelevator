@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TechElevator.Exercises.LogicalBranching
+﻿namespace TechElevator.Exercises.LogicalBranching
 {
     /*
      * Shelia's Seashell Store has a new website. Shelia wants to display if the store is open when someone views the website.
@@ -19,14 +15,11 @@ namespace TechElevator.Exercises.LogicalBranching
      *      2pm = 14...
      *      11pm = 23
      *      12am = 0
-     
-    if (storeIsOpen >= openTime) {
-    return true {
-    else {
-    return false
-    }
+     */
     public class StoreHours
     {
+
+
 
         /*
          * Shelia's Seashell Store is open between 8 am (hour 8) and 5 pm (hour 17).
@@ -37,8 +30,20 @@ namespace TechElevator.Exercises.LogicalBranching
          * isStoreOpen(17) ➔ false
          * isStoreOpen(22) ➔ false 
          */
-    
 
+        public bool IsStoreOpen(int currentHour)
+        {
+            return false;
+            //        if (storeIsOpen >= openTime)
+            //        {
+            //            return true {
+            //else
+            //                {
+            //                    return false
+            //}
+
+
+        }//this is the end of IsStoreOpen
         /*
          * Shelia forgot to take into account the day of the week.
          * Her store is only open between 8 am(hour 8) and 5 pm(hour 17) on Monday(day M), Wednesday(day W), and Friday(day F).
@@ -56,7 +61,10 @@ namespace TechElevator.Exercises.LogicalBranching
          * isStoreOpen(12, 'W') ➔ true
          * isStoreOpen(12, 'S') ➔ false
          */
-        
+
+        public bool IsStoreOpen(int currentHour, char currentDay)
+        {
+            return false;
         }
         /*
          * Shelia's Seashell Store is open between 8 am (hour 8) and 5 pm (hour 17) on Monday (day M),
@@ -72,8 +80,15 @@ namespace TechElevator.Exercises.LogicalBranching
          * isStoreOpen(12, 'S', false) ➔ false
          * isStoreOpen(9, 'S', true) ➔ true
          */
-     
-        
-             
-        
+
+        public bool IsStoreOpen(int currentHour, char currentDay, bool isSummer)
+        {
+            return false;
+        }
+    }
+}
+
+
+
+
 

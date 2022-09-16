@@ -49,7 +49,8 @@ namespace Exercises
 
         public int[] CreateOrder()
         {
-            return new int[] { };
+            int [] orderOfPizza = new int[0];
+            return 0;
         }
 
         /*
