@@ -37,13 +37,7 @@ namespace TechElevator.Exercises.LogicalBranching
          * isStoreOpen(17) ➔ false
          * isStoreOpen(22) ➔ false 
          */
-    public class StoreHours
-    {
-        public bool IsStoreOpen(int currentHour)
-        {
-            if ()
-            return false;
-        }
+    
 
         /*
          * Shelia forgot to take into account the day of the week.
@@ -62,11 +56,8 @@ namespace TechElevator.Exercises.LogicalBranching
          * isStoreOpen(12, 'W') ➔ true
          * isStoreOpen(12, 'S') ➔ false
          */
-        public bool IsStoreOpen(int currentHour, char currentDay)
-        {
-            return false;
+        
         }
-
         /*
          * Shelia's Seashell Store is open between 8 am (hour 8) and 5 pm (hour 17) on Monday (day M),
          * Wednesday (day W), and Friday (day F).
@@ -81,9 +72,8 @@ namespace TechElevator.Exercises.LogicalBranching
          * isStoreOpen(12, 'S', false) ➔ false
          * isStoreOpen(9, 'S', true) ➔ true
          */
-        public bool IsStoreOpen(int currentHour, char currentDay, bool isSummer)
-        {
-            return false;
-        }
-    }
-}
+     
+        
+             
+        
+
