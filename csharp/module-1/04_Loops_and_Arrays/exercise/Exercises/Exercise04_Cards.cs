@@ -30,7 +30,7 @@ namespace Exercises
         */
         public string GetFirstCard(string[] hand)
         {
-            return "";
+            return hand[0];
         }
 
         /*
@@ -48,7 +48,7 @@ namespace Exercises
         */
         public string[] DiscardFirstCard(String[] hand)
         {
-            return new string[] { };
+            return new string[] { hand[1], hand[2], hand[3], hand[4] };
         }
 
         /*
@@ -68,7 +68,7 @@ namespace Exercises
         */
         public string[] DiscardTopCard(String[] remainingDeck)
         {
-            return new string[] { };
+            return new string[] {remainingDeck[1], remainingDeck[2], remainingDeck[3], remainingDeck[4], remainingDeck[5], remainingDeck[6] };
         }
     }
 }

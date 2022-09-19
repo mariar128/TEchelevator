@@ -29,8 +29,14 @@ namespace Exercises
         GenerateSeatingChart(2) → [true, true]
         */
         public bool[] GenerateSeatingChart(int numberOfSeats)
+            // bool[] is return type
         {
-            return new bool[] { };
+            bool[] seatingChart = new bool[numberOfSeats];
+            for (int i = 0; i < numberOfSeats; i++)
+            {
+                seatingChart[i] = true;
+            }
+            return seatingChart;
         }
 
         /*
@@ -46,9 +52,17 @@ namespace Exercises
         GetAvailableSeatCount([true, true, true, false]) → 3
         GetAvailableSeatCount([]) → 0
         */
-        public int GetAvailableSeatCount(bool[] seatingChart)
+        public int GetAvailableSeatCount(bool[] seatingChart) // what theyre giving us is in parathesis , getavilseatcount is the name, public int is the return type
         {
-            return 0;
+            int numberAvailable = 0;
+            for(int i = 0; i < seatingChart.Length; i++)
+            {
+                if (seatingChart[i] == true)
+                {
+                    numberAvailable = numberAvailable + 1;
+                }
+            }
+            return numberAvailable;
         }
 
         /*
@@ -64,9 +78,17 @@ namespace Exercises
         GetNumberOfFullRows([true, true, true, true, true, true]) → 0    
         */
 
-        public int GetNumberOfFullRows(bool[] seatingChart)
+        public int GetNumberOfFullRows(bool[] seatingChart) //every group of 3 will be a row 
         {
-            return 0;
+            int fullRows = 0;
+            for (int i = 0; i < seatingChart.Length; i = i + 3)
+            {
+                if (seatingChart[i] == false && seatingChart[i + 1] == false && seatingChart[i + 2] == false)
+                {
+                    fullRows = fullRows + 1;
+                }
+            }    
+            return fullRows;
         }
     }
 }

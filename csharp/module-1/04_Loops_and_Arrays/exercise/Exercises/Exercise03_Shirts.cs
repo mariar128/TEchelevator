@@ -18,11 +18,11 @@ namespace Exercises
         Implement the logic to reflect an order of 6 t-shirts.
 
         Examples:
-        BuildOrder() → ['S', 'S', 'S', 'M', 'M', 'L']
+        BuildOrder() → ['S', 'S', 'S', 'M', 'M', 'L'] 
         */
-        public char[] BuildOrder()
+        public char[] BuildOrder() // char represents a character // character array
         {
-            return new char[] { };
+            return new char[] { 'S', 'S', 'S', 'M', 'M', 'L' };
         }
 
         /*
@@ -43,7 +43,34 @@ namespace Exercises
         */
         public char[] BuildBulkOrder(int numberOfShirts)
         {
-            return new char[] { };
+            int counter = 0;
+            char[] shirtOrder = new char[numberOfShirts];
+
+            for (int i = 0; i < numberOfShirts; i++)
+            {
+
+                if (counter == 0)
+                {
+                    shirtOrder[i] = 'S';
+                }
+                if (counter == 1)
+                {
+                    shirtOrder[i] = 'M';
+                }
+                if (counter == 2)
+                {
+                    shirtOrder[i] = 'L';
+                }
+                if (counter < 2)
+                {
+                    counter = counter + 1;
+                }
+                else
+                    counter = 0;
+
+
+            }
+            return shirtOrder;
         }
 
         /*
@@ -59,9 +86,25 @@ namespace Exercises
         PlaceRequest(['M', 'M', 'L']) → false
         PlaceRequest([]) → false
         */
-        public bool PlaceRequest(char[] order)
+        public bool PlaceRequest(char[] order) // asking to look through next incoming order and return true if theres smalls. else return flase
         {
-            return false;
+            int smallShirt = 0;
+            char[] smallShirts = { 'S' };
+            {
+                for (int i = 'S'; i < 'S'; i++) ;
+                {
+                   
+                    return true;
+                    
+                        
+                    }
+                    
+                }
+            }
+                   
         }
     }
-}
+
+
+    
+
