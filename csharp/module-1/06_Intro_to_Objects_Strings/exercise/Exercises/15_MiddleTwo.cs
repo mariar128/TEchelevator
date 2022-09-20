@@ -10,8 +10,10 @@
         MiddleTwo("Practice") → "ct"
         */
         public string MiddleTwo(string str)
+
         {
-            return null;
+            int length = str.Length;
+            return str.Substring(length / 2 - 1, 2);
         }
     }
 }

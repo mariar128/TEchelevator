@@ -10,7 +10,15 @@
         */
         public bool EndsLy(string str)
         {
-            return false;
+            int length = str.Length;
+
+            if (length < 2)
+            {
+                return false;
+            }
+           
+                return (str.Substring(length - 2).Equals("ly"));
+            }
         }
     }
-}
+

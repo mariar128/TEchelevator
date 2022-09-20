@@ -12,8 +12,9 @@
         */
         public string MakeOutWord(string outword, string word)
         {
-
-            return null;
+            string newOutword = outword.Substring(0, 2);
+            string secondOutword = outword.Substring(2);
+            return newOutword + word + secondOutword; 
         }
     }
 }

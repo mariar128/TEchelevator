@@ -11,7 +11,8 @@
         */
         public string NTwice(string str, int n)
         {
-            return null;
+           str.Length = int n;
+
         }
     }
 }

@@ -9,9 +9,12 @@
         ExtraEnd("ab") → "ababab"
         ExtraEnd("Hi") → "HiHiHi"
         */
-        public string ExtraEnd(string str)
+        public string ExtraEnd(string str) // length - 2
         {
-            return null;
+            
+            string newExtraEnd = str.Substring(str.Length - 2);
+     
+            return newExtraEnd + newExtraEnd + newExtraEnd;
         }
     }
 }
