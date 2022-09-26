@@ -77,15 +77,15 @@ namespace CollectionsPart2Lecture
 
 			};
 
-			//Debugging
+            //Debugging
 
 
 
-			// List<string> reviews = new List<string>();
-			// Caution removing items in a list while you are looping. This will change the indexs.
+            // List<string> reviews = new List<string>();
+            // Caution removing items in a list while you are looping. This will change the indexs.
 
 
-			//}
-		}
+            //}
+        }
 	}
 }

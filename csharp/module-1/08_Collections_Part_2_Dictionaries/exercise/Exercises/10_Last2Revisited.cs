@@ -21,7 +21,21 @@ namespace Exercises
          */
         public Dictionary<string, int> Last2Revisited(string[] words)
         {
-            return null;
+            var matchCounts = new Dictionary<string, int>();
+            foreach(var word in words)
+            {
+                matchCounts[word] = 0;
+                var stringToMatch = word.Substring(word.Length - 2);
+
+                for (int i = 0; i < word.Length - 2; i++)
+                {
+                    if(word.Substring(i, 2).Contains(stringToMatch))
+                    {
+                        matchCounts[word] += 1;
+                    }
+                }
+            }
+            return matchCounts;
         }
     }
 }
