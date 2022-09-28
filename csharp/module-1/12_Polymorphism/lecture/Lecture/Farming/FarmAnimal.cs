@@ -3,7 +3,7 @@ namespace Lecture.Farming
     /// <summary>
     /// A base farm animal class.
     /// </summary>
-    public class FarmAnimal
+    public class FarmAnimal : Isingable
     {
         /// <summary>
         /// The farm animal's name.
