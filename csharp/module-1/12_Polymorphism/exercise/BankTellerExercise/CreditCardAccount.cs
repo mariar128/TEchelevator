@@ -23,7 +23,7 @@ namespace BankTellerExercise
         public CreditCardAccount(string accountHolderName, string accountNumber)
         {
             AccountHolderName = accountHolderName;
-            accountNumber = accountNumber;
+            AccountNumber = accountNumber;
         }
         public decimal Pay(decimal amountToPay)
         {

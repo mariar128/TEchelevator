@@ -18,6 +18,10 @@ namespace Lecture.Farming
         {
             get
             {
+                if(IsAsleep)
+                {
+                    return "Zzzzz...";
+                }
                 return sound;
             }
             set
@@ -25,7 +29,9 @@ namespace Lecture.Farming
                 sound = value;
             }
         }
+        public bool IsAsleep { get; private set; }
 
+        public string 
         /// <summary>
         /// Creates a new farm animal.
         /// </summary>
@@ -36,5 +42,14 @@ namespace Lecture.Farming
             Name = name;
             Sound = sound;
         }
+        // making the animal take a nap
+        public void Sleep(bool isAsleep)
+        {
+            IsAsleep = isAsleep;
+        }
+        // make the animal eat
+        public abstract string Eat();
+      
+        }
     }
-}
+

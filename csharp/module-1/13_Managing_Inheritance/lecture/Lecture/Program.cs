@@ -10,10 +10,29 @@ namespace Lecture
             //
             // OLD MACDONALD
             //
+            Cow sirloin = new Cow();
+            Chicken frederick = new Chicken();
+            Pig bacon = new Pig();
+            Cat philco = new Cat();
+            Tractor internationalHarvester = new Tractor();
 
-            ISingable[] singables = new ISingable[]
-            {
-                new Cow(), new Chicken(), new Pig(), new Tractor()
+            philco.Sleep(true); // phil is down for a nap
+            bacon.Sleep(true); // night-night Bacon
+
+            FarmAnimal animal = new Cow(); // a cow is a farm animal, so we can fit a cow object into a farm animal shaped bucket
+            Cow farmCowTwo = new Cow();
+            FarmAnimal[] farmAnimals = new FarmAnimal[] { sirloin, frederick, bacon };
+
+            Console.WriteLine(philco.Eat());
+            Console.WriteLine(frederick.Eat());
+
+            ShaggyCow shaggyCow = new ShaggyCow();
+            Console.WriteLine(shaggyCow.Sound);
+
+            ISellable[] sellables = new ISellable[]
+           {
+                // new Cow(), new Chicken(), new Pig(), new Tractor()
+             //   new Cow(), new Chicken(), new Pig(), new Tractor()
             };
 
             foreach(ISingable singable in singables)
@@ -26,9 +45,9 @@ namespace Lecture
                 Console.WriteLine();
             }
 
-            ISellable[] sellables = new ISellable[]
+           
             {
-                new Cow(), new Pig(), new Egg()
+                new Cow(), new Pig(), new Egg();
             };
 
             foreach(ISellable sellable in sellables)
