@@ -16,4 +16,8 @@
     <Folder Include="Classes\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TestableClasses\TestableClasses.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -15,7 +15,26 @@ namespace TestableClasses.Classes.Tests
         //.IsNotNull()
         //.IsNull()
 
+        [TestMethod]
+        public void MakeAbbaTest()
+        {
 
+            //Arrange
+            StringExercises stringExercises = new StringExercises();
+            //Act
+            string result = stringExercises.MakeAbba("Hi", "Bye");
+            //Assert
+            Assert.AreEqual("HiByeByeHi", result);
+
+            //Arrange - already made an object
+
+            //Act
+            string resultTwo = stringExercises.MakeAbba("What", "Up");
+
+            //Assert
+            Assert.AreEqual("UpWhatWhatUp", resultTwo, "Please try again"); // this fails, but also gives a message in the test explorer
+        }
+        [TestMethod]
 
     }
 }
