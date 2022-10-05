@@ -12,15 +12,14 @@ namespace WordSearch
             string filePath = Console.ReadLine();
             Console.WriteLine("Enter the key word");
             string word = Console.ReadLine();
-            Console.WriteLine("Do you want case senstive?");
-            string letter = Console.ReadLine();
+            
 
             /*
             Step 2: Step Two: Open the book file and handle errors
 
             */
             
-            if(letter == "n")
+            
             try
             {
 
@@ -31,9 +30,8 @@ namespace WordSearch
                     {
 
                         string line = sr.ReadLine();
-                        lineCount++;
-                        if (line.Contains(word))
-                        { Console.WriteLine(lineCount + ") " + line); }
+                        
+                        
 
                     }
                     //Loop until the end of file is reached
