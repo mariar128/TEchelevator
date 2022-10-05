@@ -25,7 +25,28 @@ namespace FileIOReadingTutorial
 
             /*
             Step 2: Step Two: Open the book file and handle errors
+
             */
+            int lineCount = 0;
+            try
+            {
+
+                using (StreamReader fileInput = new StreamReader(filePath))
+                { while (!fileInput.EndOfStream)
+                    {
+                        string lineOfText = fileInput.ReadLine();
+                        lineCount++;
+                        Console.WriteLine(lineCount + ": " + lineOfText);
+                    }
+                    //Loop until the end of file is reached
+                }
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
 
 
         }

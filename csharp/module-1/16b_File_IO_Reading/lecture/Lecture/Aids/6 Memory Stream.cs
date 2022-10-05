@@ -11,7 +11,7 @@ namespace Lecture.Aids
             string file = "input.txt";
             string fullPath = Path.Combine(folder, file);
 
-            byte[] bytes = File.ReadAllBytes(fullPath);
+            byte[] bytes = File.ReadAllBytes(fullPath); // File class has ReadAllBytes(path) that reads all the data in a file to byte array
             Console.Write(bytes);
         }
     }

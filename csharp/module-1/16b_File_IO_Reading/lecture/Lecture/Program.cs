@@ -6,9 +6,16 @@ namespace Lecture
     {
         static void Main(string[] args)
         {
-            //ReadingInFiles.ReadACharacterFile();
+            //   FileAndDirectories fad = new FileAndDirectories();
+            //     fad.UsingTheDirectoryClass();
+
+            // FilePaths filepathz = new FilePaths();
+
+         
+            // ReadingInFiles.ReadACharacterFile();
             //ReadingCSVFiles.ReadFile();
-            //SummingUpNumbers.ReadFile();
+           // SummingUpNumbers.ReadFile();
+            Memory_StreamSample.ReadStream();
         }
     }
 }

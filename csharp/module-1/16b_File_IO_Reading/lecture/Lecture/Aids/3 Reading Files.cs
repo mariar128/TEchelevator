@@ -30,7 +30,7 @@ namespace Lecture.Aids
                     // EndOfStream is a "marker" that the stream uses to determine
                     // if it has reached the end
                     // As we read forward the marker moves forward like a typewriter.
-                    while (!sr.EndOfStream)
+                    while (!sr.EndOfStream) // while the StreamReader is not at the end of the stream
                     {
                         // Read in the line
                         string line = sr.ReadLine();

@@ -12,19 +12,19 @@ namespace Lecture.Aids
     * on strings that represent folders and file paths.
     *
     */
-    public static class FilePaths
+    public  class FilePaths
     {
         /*
         * The path class helps create a full path given a directory
         * and file name.
         */
-        public static void UsingPathToCombineTwoFilePaths()
+        public  void UsingPathToCombineTwoFilePaths()
         {
             string path1 = @"C:\Temp\Directory";
             string filename = @"filename.txt";
 
             // Generating a full path from a folder and a file name
-            string fullPath = Path.Combine(path1, filename);
+            string fullPath = Path.Combine(path1, filename); // all I am doing here is creating the path to filename.txt
         }
 
 
@@ -32,7 +32,7 @@ namespace Lecture.Aids
         /*
         * The path class helps by getting the extension in a file name.
         */
-        public static void GettingExtensions()
+        public  void GettingExtensions()
         {
             string path = @"C:\Temp\path.txt";
 
@@ -45,7 +45,7 @@ namespace Lecture.Aids
 
 
 
-        public static void UsingPathForTemporaryFolders()
+        public  void UsingPathForTemporaryFolders()
         {
 
             // Generate a temporary path folder and file

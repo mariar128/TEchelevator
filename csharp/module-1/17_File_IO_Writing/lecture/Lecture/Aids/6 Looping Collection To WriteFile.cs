@@ -28,7 +28,7 @@ namespace Lecture.Aids
                 {"Ruby", 76.2 },
                 {"Matlab", 72.4 }
             };
-            string directory = Environment.CurrentDirectory;
+            string directory = Environment.CurrentDirectory; //remember, this is the curent directory where the program is running, not where the files we see
             string filename = "programminglanguages.txt";
             string path = Path.Combine(directory, filename);
 

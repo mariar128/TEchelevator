@@ -7,8 +7,9 @@ namespace Lecture
     {
         static void Main(string[] args)
         {
-
-            Console.Write("Press enter to finish");
+          //  WritingTextFiles.WritingAFile();
+          //  LoopingCollectionToWriteFile.LoopingADictionaryToWriteAFile();
+           Console.Write("Press enter to finish");
             Console.ReadLine();
         }
     }
