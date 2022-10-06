@@ -98,7 +98,7 @@ namespace FileIOPart2.Tests
             return File.ReadAllText(filename).Replace("\r\n", "\n");
         }
 
-        private void RunProgram(string searchWord, string replaceWord)
+        public void RunProgram(string searchWord, string replaceWord)
         {
             string input = searchWord + Environment.NewLine + replaceWord + Environment.NewLine + testSourceFile + Environment.NewLine + testDestFile;
 
