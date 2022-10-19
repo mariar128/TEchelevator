@@ -16,12 +16,50 @@ namespace USCitiesAndParks.DAO
 
         public Park GetPark(int parkId)
         {
-            throw new NotImplementedException();
+            Park park = null;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM park WHERE park_id = @park_id", conn);
+                cmd.Parameters.AddWithValue("@park_id", parkId);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())  // if only one row is expected back, just check to see if it can read, don't need a whole while loop for one row
+                {
+                    park = CreateParkFromReader(reader);
+                }
+            
+
+                return park;
+            }
+           
         }
 
         public IList<Park> GetParksByState(string stateAbbreviation)
         {
-            throw new NotImplementedException();
+            IList<Park> parks = new List<Park>();
+
+            using(SqlConnection parkConnection = new SqlConnection(connectionString))
+            {
+                parkConnection.Open();
+                SqlCommand parkCommand = new SqlCommand("SELECT * FROM park JOIN park_state ON park.park_id = park_state.park_id WHERE state_abbreviation = @state_abbreviation", parkConnection);
+                parkCommand.Parameters.AddWithValue("@state_abbreviation", stateAbbreviation);
+
+                SqlDataReader reader = parkCommand.ExecuteReader(); //execute select query  
+
+                //create park object(s) from the data coming back from the reader
+                while(reader.Read())
+                {
+                    Park park = CreateParkFromReader(reader);
+                    parks.Add(park);
+                }
+
+            }
+            return parks;
+
+
+
         }
 
         public Park CreatePark(Park park)
@@ -49,9 +87,15 @@ namespace USCitiesAndParks.DAO
             throw new NotImplementedException();
         }
 
-        private Park CreateParkFromReader(SqlDataReader reader)
+        private Park CreateParkFromReader(SqlDataReader reader) //make a park object out of row of SQL data
         {
-            throw new NotImplementedException();
+            Park park = new Park();
+            park.ParkId = Convert.ToInt32(reader["park_id"]);
+            park.ParkName = Convert.ToString(reader["park_name"]);
+            park.DateEstablished = Convert.ToDateTime(reader["date_established"]);
+            park.Area = Convert.ToDecimal(reader["area"]);
+            park.HasCamping = Convert.ToBoolean(reader["has_camping"]);
+            return park;
         }
     }
 }

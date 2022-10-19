@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using USCitiesAndParks.Models;
@@ -9,29 +9,30 @@ namespace USCitiesAndParks.DAO
     {
         private readonly string connectionString;
 
-        public CitySqlDao(string connString)
+        public CitySqlDao(string connString) //CitySqlDao instantiated in Program.cs and thats where the connection string comes from
         {
             connectionString = connString;
         }
 
+        //method to retrieve city data from the database
         public City GetCity(int cityId)
         {
             City city = null;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                conn.Open();
+                conn.Open(); // open the connection to the DB
                 SqlCommand cmd = new SqlCommand("SELECT city_id, city_name, state_abbreviation, population, area FROM city WHERE city_id = @city_id;", conn);
-                cmd.Parameters.AddWithValue("@city_id", cityId);
+                cmd.Parameters.AddWithValue("@city_id", cityId); // add a value for the sql parameter of @city_id in the query string above
 
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader(); // runs the sql query against the database 
 
-                if (reader.Read())
+                if (reader.Read()) // if we can actually read the result set (no errors, data row exist)
                 {
-                    city = CreateCityFromReader(reader);
+                    city = CreateCityFromReader(reader); // go create a city object from the results
                 }
             }
-            return city;
+            return city; // return the city object
         }
 
         public IList<City> GetCitiesByState(string stateAbbreviation)
@@ -44,7 +45,7 @@ namespace USCitiesAndParks.DAO
                 SqlCommand cmd = new SqlCommand("SELECT city_id, city_name, state_abbreviation, population, area FROM city WHERE state_abbreviation = @state_abbreviation;", conn);
                 cmd.Parameters.AddWithValue("@state_abbreviation", stateAbbreviation);
 
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader(); 
 
                 while (reader.Read())
                 {
@@ -70,7 +71,7 @@ namespace USCitiesAndParks.DAO
                 cmd.Parameters.AddWithValue("@state_abbreviation", city.StateAbbreviation);
                 cmd.Parameters.AddWithValue("@population", city.Population);
                 cmd.Parameters.AddWithValue("@area", city.Area);
-
+                
                 newCityId = Convert.ToInt32(cmd.ExecuteScalar());
             }
             return GetCity(newCityId);
