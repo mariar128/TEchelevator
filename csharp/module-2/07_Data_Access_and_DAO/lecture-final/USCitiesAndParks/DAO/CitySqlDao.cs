@@ -92,7 +92,7 @@ namespace USCitiesAndParks.DAO
                 cmd.Parameters.AddWithValue("@area", city.Area);
                 cmd.Parameters.AddWithValue("@city_id", city.CityId);
 
-                cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery(); //returns # of rows changed, but we're not doing anything with that information here 
             }
         }
 
