@@ -10,26 +10,56 @@ namespace HotelApp.Services
     {
         protected static RestClient client = null;
 
-        public HotelApiService(string apiUrl)
+        public HotelApiService(string apiUrl) // apiURL is where the API we want to interact with "lives"
         {
             if (client == null)
             {
-                client = new RestClient(apiUrl);
+                client = new RestClient(apiUrl); //build a client to interact with the API (im a nerd)
             }
         }
 
-        public List<Hotel> GetHotels()
+        public List<Hotel> GetHotels() // this should be at localhost:3000/hotels
         {
-            throw new NotImplementedException();
+            // build a request
+            RestRequest request = new RestRequest("hotels"); // make a request to hotels
+            // send the request to the API
+            IRestResponse<List<Hotel>> response = client.Get<List<Hotel>>(request);
+            // IRestResponse<T> is a container for the data coming back from the API
+            //use the client (RestClient), make a GET request for a speciifc type of data, and use the request object that we built
+            if(!response.IsSuccessful) // check to see if my response was not a success so I can handle that situation
+            {
+                throw new HttpRequestException("Something went wrong communicating with the Server! ");
+            }
+            return response.Data; // the data is wrapped up in the response object
+                                           
         }
-
-        public List<Review> GetReviews()
+          
+        public List<Review> GetReviews() //http://localhost:3000/reviews 
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest("reviews"); // make a request to hotels
+            // send the request to the API
+            IRestResponse<List<Review>> response = client.Get<List<Review>>(request);
+            
+            if (!response.IsSuccessful) // check to see if my response was not a success so I can handle that situation
+            {
+                throw new HttpRequestException("Something went wrong communicating with the Server! ");
+            }
+            return response.Data; // the data is wrapped up in the response object
         }
 
         public Hotel GetHotel(int hotelId)
         {
+            RestRequest request = new RestRequest($"hotels.{hotelId}"); // make a request to hotels
+            // send the request to the API
+            IRestResponse<List<Hotel>> response = client.Get<List<Hotel>>(request);
+
+            if (!response.IsSuccessful) // check to see if my response was not a success so I can handle that situation
+            {
+                throw new HttpRequestException("Something went wrong communicating with the Server! ");
+            }
+            return response.Data; // the data is wrapped up in the response object
+        }
+
             throw new NotImplementedException();
         }
 

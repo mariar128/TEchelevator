@@ -16,19 +16,21 @@ namespace USCitiesAndParks.Tests
 
         private CitySqlDao dao;
 
-        [TestInitialize]
+        [TestInitialize] // before each test
         public override void Setup()
         {
+            //A lot of "arranging" happens here"
             dao = new CitySqlDao(ConnectionString);
             testCity = new City(0, "Test City", "CC", 99, 999);
             base.Setup();
         }
 
         [TestMethod]
-        public void GetCity_ReturnsCorrectCityForId()
+        public void GetCity_ReturnsCorrectCityForId() // can we get the city based on the city id? 
         {
-            City city = dao.GetCity(1);
-            AssertCitiesMatch(CITY_1, city);
+            //"Act" and "assert" usually happens in the test methods
+            City city = dao.GetCity(1); // go interact with mock database (UnitedStatesTesting)
+            AssertCitiesMatch(CITY_1, city); // we have an assert method written for us to check the conversion 
 
             city = dao.GetCity(2);
             AssertCitiesMatch(CITY_2, city);
@@ -37,7 +39,7 @@ namespace USCitiesAndParks.Tests
         [TestMethod]
         public void GetCity_ReturnsNullWhenIdNotFound()
         {
-            City city = dao.GetCity(99);
+            City city = dao.GetCity(99); // go find the city in the test db with id 99 (it doesnt exist)
             Assert.IsNull(city);
         }
 
@@ -113,8 +115,10 @@ namespace USCitiesAndParks.Tests
             AssertCitiesMatch(CITY_1, cities[0]);
         }
 
-        private void AssertCitiesMatch(City expected, City actual)
-        {
+        private void AssertCitiesMatch(City expected, City actual) // why do we need to write an assert method 
+                                                                   // for the same reason we take a row out of the SqlDataReader and turn it into a c# object
+                                                                    // c# doesnt understand the data types coming from the database
+        {                                                          // the conversion is still happening in the DAO, but we are testing it here
             Assert.AreEqual(expected.CityId, actual.CityId);
             Assert.AreEqual(expected.CityName, actual.CityName);
             Assert.AreEqual(expected.StateAbbreviation, actual.StateAbbreviation);
