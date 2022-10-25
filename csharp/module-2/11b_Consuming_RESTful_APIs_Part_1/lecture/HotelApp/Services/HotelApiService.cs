@@ -33,21 +33,20 @@ namespace HotelApp.Services
             return response.Data; // the data is wrapped up in the response object
                                            
         }
-          
+
         public List<Review> GetReviews() //http://localhost:3000/reviews 
         {
             RestRequest request = new RestRequest("reviews"); // make a request to hotels
             // send the request to the API
             IRestResponse<List<Review>> response = client.Get<List<Review>>(request);
-            
+
             if (!response.IsSuccessful) // check to see if my response was not a success so I can handle that situation
             {
                 throw new HttpRequestException("Something went wrong communicating with the Server! ");
             }
             return response.Data; // the data is wrapped up in the response object
         }
-
-        public Hotel GetHotel(int hotelId)
+               public Hotel GetHotel(int hotelId) // http://localhost:3000/hotels/1
         {
             RestRequest request = new RestRequest($"hotels.{hotelId}"); // make a request to hotels
             // send the request to the API
@@ -60,18 +59,36 @@ namespace HotelApp.Services
             return response.Data; // the data is wrapped up in the response object
         }
 
-            throw new NotImplementedException();
-        }
+            
+        
 
         public List<Review> GetHotelReviews(int hotelId)
         {
-            throw new NotImplementedException();
+
+        RestRequest request = new RestRequest($"reviews?hotelId={hotelId}"); // make a request to hotels
+                                                                    // send the request to the API
+        IRestResponse<List<Review>> response = client.Get<List<Review>>(request);
+
+        if (!response.IsSuccessful) // check to see if my response was not a success so I can handle that situation
+        {
+            throw new NotImplementedException("Something went wrong communicating with the Server! ");
+        }
+        return response.Data; // the
+        
         }
 
         public List<Hotel> GetHotelsWithRating(int starRating)
         {
-            throw new NotImplementedException();
+        RestRequest request = new RestRequest($"hotels?stars={starRating}"); // make a request to hotels
+                                                                             // send the request to the API
+        IRestResponse<List<Hotel>> response = client.Get<List<Hotel>>(request);
+
+        if (!response.IsSuccessful) // check to see if my response was not a success so I can handle that situation
+        {
+            throw new NotImplementedException("Something went wrong communicating with the Server! ");
         }
+        return response.Data; // the
+    }
 
         public City GetPublicAPIQuery()
         {

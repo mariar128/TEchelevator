@@ -53,7 +53,7 @@ namespace EmployeeProjects.DAO
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read())
+                while (reader.Read())
                 {
                     Timesheet timesheet = CreateTimesheetFromReader(reader);
                     timesheets.Add(timesheet);
@@ -73,7 +73,7 @@ namespace EmployeeProjects.DAO
 
                 SqlCommand cmd = new SqlCommand("SELECT timesheet_id, employee_id, project_id, date_worked, hours_worked, is_billable, description " +
                                                 "FROM timesheet " +
-                                                "WHERE employee_id = @project_id " +
+                                                "WHERE project_id = @project_id " +
                                                 "ORDER BY timesheet_id;", conn);
                 cmd.Parameters.AddWithValue("@project_id", projectId);
 

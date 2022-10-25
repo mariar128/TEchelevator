@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using EmployeeProjects.DAO;
 using EmployeeProjects.Models;
+using System.Data.SqlClient;
 
 namespace EmployeeProjects.Tests.DAO
 {
@@ -27,31 +28,52 @@ namespace EmployeeProjects.Tests.DAO
         [TestMethod]
         public void GetTimesheet_ReturnsCorrectTimesheetForId()
         {
-            Assert.Fail();
+            Timesheet timesheet = dao.GetTimesheet(1); //go interact with the mock database (UnitedStatesTesting)
+            AssertTimesheetsMatch(TIMESHEET_1, timesheet);
+
+
         }
+            
+
+                
+            
 
         [TestMethod]
         public void GetTimesheet_ReturnsNullWhenIdNotFound()
         {
-            Assert.Fail();
+            Timesheet timesheet = dao.GetTimesheet(99); //go find the city in the test db with id 99 (it doesn't exist)
+            Assert.IsNull(timesheet);
         }
 
         [TestMethod]
         public void GetTimesheetsByEmployeeId_ReturnsListOfAllTimesheetsForEmployee()
         {
-            Assert.Fail();
+
+            IList<Timesheet> timesheet = dao.GetTimesheetsByEmployeeId(2);
+            Assert.AreEqual(2, timesheet.Count);
+            AssertTimesheetsMatch(TIMESHEET_3, timesheet[2]);
+            AssertTimesheetsMatch(TIMESHEET_4, timesheet[3]);
+
+            
         }
 
         [TestMethod]
         public void GetTimesheetsByProjectId_ReturnsListOfAllTimesheetsForProject()
         {
-            Assert.Fail();
+            IList<Timesheet> timesheet = dao.GetTimesheetsByEmployeeId(1);
+            Assert.AreEqual(2, timesheet.Count);
+            AssertTimesheetsMatch(TIMESHEET_1, timesheet[0]);
+            AssertTimesheetsMatch(TIMESHEET_2, timesheet[1]);
+
         }
 
         [TestMethod]
         public void CreateTimesheet_ReturnsTimesheetWithIdAndExpectedValues()
         {
-            Assert.Fail();
+            IList<Timesheet> timesheet = dao.GetTimesheetsByEmployeeId(1);
+            Assert.AreEqual(2, timesheet.Count);
+            AssertTimesheetsMatch(TIMESHEET_1, timesheet[0]);
+            AssertTimesheetsMatch(TIMESHEET_2, timesheet[1]);
         }
 
         [TestMethod]
@@ -69,7 +91,10 @@ namespace EmployeeProjects.Tests.DAO
         [TestMethod]
         public void DeletedTimesheetCantBeRetrieved()
         {
-            Assert.Fail();
+            dao.DeleteTimesheet(1);
+
+            Timesheet retrievedTimesheet = dao.GetTimesheet(1);
+            Assert.IsNull(retrievedTimesheet);
         }
 
         [TestMethod]
