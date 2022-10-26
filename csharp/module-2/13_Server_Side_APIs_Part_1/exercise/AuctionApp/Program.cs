@@ -1,12 +1,20 @@
-﻿namespace AuctionApp
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+
+namespace AuctionApp
 {
     public class Program
     {
-        private const string apiUrl = "http://localhost:3000/";
-        static void Main()
+        public static void Main(string[] args)
         {
-            AuctionApp app = new AuctionApp(apiUrl);
-            app.Run();
+            CreateHostBuilder(args).Build().Run();
         }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }

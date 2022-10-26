@@ -7,5 +7,13 @@
         public string Description { get; set; }
         public string User { get; set; }
         public double CurrentBid { get; set; }
+
+        public bool IsValid
+        {
+            get
+            {
+                return Title != null && Description != null && User != null && CurrentBid != 0;
+            }
+        }
     }
 }
