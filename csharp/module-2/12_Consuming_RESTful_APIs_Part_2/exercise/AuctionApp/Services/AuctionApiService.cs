@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using AuctionApp.Models;
 using System.Net.Http;
-using System;
-using AuctionApp.Services;
-namespace Au
+namespace AuctionApp.Services
 {
     public class AuctionApiService
     {
