@@ -6,7 +6,6 @@ using System.Net;
 using AuctionApp.Models;
 using AuctionApp.Services;
 using System.Net.Http;
-using Au;
 
 namespace AuctionApp.Tests
 {
