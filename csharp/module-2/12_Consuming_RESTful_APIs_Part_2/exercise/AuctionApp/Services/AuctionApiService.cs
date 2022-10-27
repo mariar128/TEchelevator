@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using AuctionApp.Models;
 using System.Net.Http;
 using System;
+using AuctionApp.Services;
 namespace Au
 {
     public class AuctionApiService
@@ -63,7 +64,7 @@ namespace Au
 
         public Auction AddAuction(Auction newAuction)
         {
-        //http://localhost:3000/auctions
+            //http://localhost:3000/auctions
             RestRequest request = new RestRequest("auctions");
             request.AddJsonBody(newAuction);
             IRestResponse<Auction> response = client.Post<Auction>(request); // send the request
@@ -83,11 +84,11 @@ namespace Au
 
         public Auction UpdateAuction(Auction auctionToUpdate)
         {
-        //Http://localhost:3000/auctions/{2}
+            //Http://localhost:3000/auctions/{2}
             RestRequest request = new RestRequest($"auctions/{auctionToUpdate.Id}");
             request.AddJsonBody(auctionToUpdate); // add the object that is being updated
             IRestResponse<Auction> response = client.Put<Auction>(request);
-           // throw new HttpRequestException();
+            // throw new HttpRequestException();
             //   CheckForError(response, $"Add reservation for {auctionToUpdate.CurrentBid}");
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
@@ -104,8 +105,9 @@ namespace Au
         {
             // Http://localhost:3000/auctions/{3}
 
-            RestRequest request = new RestRequest($"reservations/{auctionId}");
+            RestRequest request = new RestRequest($"auctions/{auctionId}");
             IRestResponse response = client.Delete(request);
+            CheckForError(response, $"Delete auction for {auctionId}");
 
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
@@ -116,7 +118,7 @@ namespace Au
                 throw new HttpRequestException("Error occurred - received non-success response: " + (int)response.StatusCode);
             }
             return true;
-        
+
         }
         public List<Auction> GetAllAuctions()
         {
@@ -131,6 +133,15 @@ namespace Au
                 throw new HttpRequestException("Error occurred - received non-success response: " + (int)response.StatusCode);
             }
             return response.Data;
+        }
+        private void CheckForError(IRestResponse response, string action)
+        {
+            if (!response.IsSuccessful)
+            {
+                // TODO: Write a log message for future reference
+
+                throw new HttpRequestException($"There was an error in the call to the server");
+            }
         }
     }
 }
