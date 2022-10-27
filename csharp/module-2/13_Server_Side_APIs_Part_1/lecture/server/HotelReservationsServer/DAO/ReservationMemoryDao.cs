@@ -24,9 +24,9 @@ namespace HotelReservations.DAO
             }
         }
 
-        public List<Reservation> List()
+        public List<Reservation> GetAllReservations()
         {
-            return Reservations;
+            return reservationDao.List();
         }
 
         public Reservation Get(int id)

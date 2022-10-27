@@ -5,13 +5,15 @@ using HotelReservations.DAO;
 
 namespace HotelReservations.Controllers
 {
-    [Route("hotels")]
+    [Route("hotels")] // route attribute defines the location of the controller ("localhost:????/hotels" or "localhost:5001/hotels")
+    //[Route([controller])] would result in the same thing here since this is the HotelsController
     [ApiController]
-    public class HotelsController : ControllerBase
+
+    public class HotelsController : ControllerBase //inherit from ControllerBase
     {
         private static IHotelDao hotelDao;
 
-        public HotelsController()
+        public HotelsController() // in our constructor we have our DAO for the hotels
         {
             if (hotelDao == null)
             {
@@ -19,13 +21,13 @@ namespace HotelReservations.Controllers
             }
         }
 
-        [HttpGet()]
+        [HttpGet()] // attriubte says that this method handles GET requests
         public List<Hotel> ListHotels()
         {
             return hotelDao.List();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}")] // hotels/:id <-- id added onto the route
         public ActionResult<Hotel> GetHotel(int id)
         {
             Hotel hotel = hotelDao.Get(id);

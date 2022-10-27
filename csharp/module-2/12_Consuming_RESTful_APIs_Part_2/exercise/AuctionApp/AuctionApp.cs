@@ -1,4 +1,5 @@
-﻿using AuctionApp.Models;
+﻿using Au;
+using AuctionApp.Models;
 using AuctionApp.Services;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ namespace AuctionApp
 {
     public class AuctionApp
     {
-        private readonly AuctionApiService auctionApiService;
+        private readonly Au.AuctionApiService auctionApiService;
         private readonly AuctionConsoleService console = new AuctionConsoleService();
 
         public AuctionApp(string apiUrl)
