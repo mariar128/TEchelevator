@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using AuctionApp.Models;
 using System.Net.Http;
 using System;
-using AuctionApp.Services;
 namespace Au
 {
     public class AuctionApiService
@@ -103,12 +102,11 @@ namespace Au
 
         public bool DeleteAuction(int auctionId)
         {
-       // Http://localhost:3000/auctions/{3}
+            // Http://localhost:3000/auctions/{3}
 
             RestRequest request = new RestRequest($"reservations/{auctionId}");
             IRestResponse response = client.Delete(request);
-            //  CheckForError(response, $"Delete reservation {auctionId}");
-           // throw new HttpRequestException();
+
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
                 throw new HttpRequestException("Error occurred - unable to reach server.", response.ErrorException);
@@ -118,6 +116,7 @@ namespace Au
                 throw new HttpRequestException("Error occurred - received non-success response: " + (int)response.StatusCode);
             }
             return true;
+        
         }
         public List<Auction> GetAllAuctions()
         {
