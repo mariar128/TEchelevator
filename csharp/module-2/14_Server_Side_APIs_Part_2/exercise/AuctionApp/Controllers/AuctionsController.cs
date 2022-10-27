@@ -48,7 +48,41 @@ namespace AuctionApp.Controllers
         [HttpPost]
         public ActionResult<Auction> Create(Auction auction)
         {
-            return dao.Create(auction);
+            Auction added = dao.Create(auction);
+            return Created($"/auctions/{added.Id}", added);
+        }
+
+        [HttpPut("{id}")]
+        
+        public ActionResult<Auction> Update(Auction auction, int id)
+        {
+            Auction existingAuction = dao.Get(id);
+            if(existingAuction == null)
+            {
+                return NotFound();
+            }
+            Auction anotherAuction = dao.Update(existingAuction.Id, auction);
+            return anotherAuction;
+        }
+
+        [HttpDelete("{id}")]
+
+        public ActionResult<Auction> Delete(int id)
+        {
+            Auction thisAuction = dao.Get(id);
+             if(thisAuction == null)
+            {
+                return NotFound();
+            }
+            bool Auction = dao.Delete(id);
+            if(Auction)
+            {
+                return NoContent();
+            }
+           else
+            {
+                return StatusCode(500);
+            }
         }
     }
 }
