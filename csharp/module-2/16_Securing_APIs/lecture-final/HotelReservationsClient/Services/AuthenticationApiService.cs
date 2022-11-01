@@ -18,6 +18,11 @@ namespace HotelReservationsClient.Services
             IRestResponse<ApiUser> response = client.Post<ApiUser>(request);
 
             CheckForError(response, "Login");
+
+
+
+
+
             user.Token = response.Data.Token;
 
             //Set the token on the client

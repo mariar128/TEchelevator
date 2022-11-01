@@ -1,5 +1,6 @@
 ﻿using HotelReservations.DAO;
 using HotelReservations.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -7,6 +8,7 @@ namespace HotelReservations.Controllers
 {
     [Route("reservations")]
     [ApiController]
+    [Authorize]
     public class ReservationsController : ControllerBase
     {
         private IReservationDao reservationDao;
@@ -68,7 +70,7 @@ namespace HotelReservations.Controllers
             Reservation result = reservationDao.Update(id, reservation);
             return Ok(result);
         }
-
+        [Authorize(Roles = "admin")]
         [HttpDelete("{id}")]
         public ActionResult DeleteReservation(int id)
         {
