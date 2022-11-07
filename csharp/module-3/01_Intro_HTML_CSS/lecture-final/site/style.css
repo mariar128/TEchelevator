@@ -1,0 +1,22 @@
+img {
+    /* this a CSS comment
+    and like the HTML comments
+    it is multi-line */
+    height: 200px;
+}
+
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    /* if the browser can find Arial installed, use that...
+    if it can't, try for Helvetica... and if it can't find that...
+    use whatever sans-serif font is default on that machine */
+}
+
+h1 {
+    font-size: 50px;
+    color: #6667AB; /* Pantone VERY PERI */ 
+}
+
+h3 { 
+    color: tomato;
+}

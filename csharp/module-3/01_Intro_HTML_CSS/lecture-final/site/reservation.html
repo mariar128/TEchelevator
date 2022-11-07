@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/> <!-- load and use the CSS file -->
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Bits & Bytes</h1>
+        <p>Gordon Ramsey, who?</p>
+    </header>
+    <nav> <!-- navigation section -->
+        <a href="index.html">Go Back Home</a>
+    </nav>
+    <main>
+        <h2>Make A Reservation</h2>
+
+        <form method="POST" action="/api/reservation"> <!-- method is HTTP method, action is path -->
+            <!-- THIS IS AN EXAMPLE AND NOT REAL --> 
+            <div> <!-- div is just a container element -->
+                <label for="reservationName">Name:</label>
+                <input id="reservationName" type="text"/>
+            </div>
+
+            <div>
+                <label for="reservationDate">Date:</label>
+                <input id="reservationDate" type="date"/>
+
+                <label for="reservationTime">Time:</label>
+                <input id="reservationTime" type="time"/>
+            </div>
+
+            <div>
+                <label for="specialOccasion">Special Occasion?</label>
+                <input id="specialOccasion" type="checkbox"/>
+            </div>
+
+            <div>
+                <input type="submit">
+            </div>
+            <!-- <input type="checkbox"/>
+            <input type="radio"/>
+            <input type="date"/>
+            <input type="button"/> -->
+
+        </form>
+
+    </main>
+
+
+</body>
+</html>
