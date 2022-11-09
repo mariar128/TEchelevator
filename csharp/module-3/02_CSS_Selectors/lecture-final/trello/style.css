@@ -1,0 +1,98 @@
+body {
+    background-color: #858c90;
+    font-family: 'Raleway', 'Arial', 'Helvetica', sans-serif; 
+    white-space: nowrap; /* no wrapping elements around when you run out of browser width */
+}
+
+/* style the trello-list class elements */
+.trello-list { 
+    display: inline-block;  
+    width: 350px;
+    background-color: #dddddd;
+    border-radius: 5px; /* round off the edges */ 
+    margin-right: 10px; /* shove the divs 10px away from each other on the right */ 
+    vertical-align: top; /* line up the tops of the divs */
+}
+
+/* get all of the h2 elements inside of divs that have the .trello-list class */ 
+div.trello-list h2 {
+    margin: 10px;
+    font-size: 1rem;
+    /* 16px is default HTML font size, so 1rem is 
+    1 relative to 16px (the font size of the <html> element) */
+    font-weight: bold;
+}
+
+div.trello-list ol {
+/*property for list styling */ 
+list-style: none; /* remove the numbers from the ordered list */ 
+padding: 0;
+margin: 0;
+
+}
+
+div.trello-list li { 
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 0.8rem; /* slightly smaller than the h2 */
+}
+
+/* go find the LAST list item in the trello-list divs */
+div.trello-list li:last-child {
+    margin-bottom: 0;   
+}
+
+
+div.trello-list a { 
+    color: #5e5e5e;
+    text-decoration: none; /* takes the underline off */
+    font-size: 0.8rem;
+    padding: 8px;
+    display: block;
+}
+
+div.trello-list a:hover {
+    color: black;
+}
+
+/* select multiple elements and write one CSS rule */ 
+header > h1,
+header > p {
+    display: inline-block;
+    height: 20px;
+    vertical-align: middle;
+    color: rgb(235, 235, 235);
+    border-right: 1px solid rgb(235, 235, 235);
+    padding-right: 10px;
+}
+
+header > h1 { 
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+div.labels span { 
+    display: inline-block;
+    height: 10px;
+    width: 30px;
+    border-radius: 2px;
+}
+
+/* stacky classes */
+.label.general { 
+    background-color: orange;
+}
+
+.label.pathway { 
+    background-color: red;
+}
+
+.label.individual {
+    background-color: green; 
+}
+
+.label.pair { 
+    background-color: teal;
+}
