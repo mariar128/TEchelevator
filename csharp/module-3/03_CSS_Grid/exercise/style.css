@@ -11,6 +11,7 @@ body {
     margin-left: 7%;
     margin-right: 7%;
     background-color: rgba(192, 192, 192, 0.1);
+    grid-area: main;
 }
 
 h1 {
@@ -23,6 +24,7 @@ h1#headline {
     margin-bottom: 0.15em;
     color: #505355;
     border-bottom: solid 1px black;
+    grid-area: header;
 }
 
 h2 {
@@ -49,4 +51,41 @@ header img {
 
 #student-picture img{
     border-radius: 50%;
+}
+#experience-grid
+{
+display: grid;
+grid-template-columns: 30px 30px;
+grid-area: menu;
+grid-row-gap: 20px;
+grid-column-gap: 50px;
+}
+#main-grid
+{
+    grid-area: content;
+        display: grid; /* set display property to grid for layout */
+        grid-template-columns:  1fr 1fr 1fr;
+           gap: 50px;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-row-gap: 20px;
+        height: 100vh; 
+        align-items: center;
+        justify-items: center;
+}
+
+div, experience-code
+{
+grid-area: code;
+}
+div, experience-database
+{
+    grid-area: database;
+}
+div, experience-web
+{
+grid-area: web;
+}
+div, #experience-design
+{
+grid-area: design;
 }

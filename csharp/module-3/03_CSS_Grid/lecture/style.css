@@ -1,4 +1,36 @@
+.container
+{
+    display:grid; /* set display property to grid for layout */
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-areas:
+    "header header header"
+    "menu main upcoming"
+    "footer footer footer"
+    ;
+    gap:6px;
+    height: 
+}
 
+header 
+{
+    grid-area: header;
+}
+#menu-nav
+{
+    grid-area: menu;
+}
+main
+{
+    grid-area: main;
+}
+#upcoming-events 
+{
+    grid-area: upcoming
+}
+footer 
+{
+    grid-area:footer;
+}
 
 
 /***** enter grid CSS above this line *****/

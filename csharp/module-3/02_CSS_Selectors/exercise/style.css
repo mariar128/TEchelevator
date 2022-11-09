@@ -15,3 +15,118 @@ ul {
   margin: 0;
   padding: 0;
 }
+aside
+{
+display: inline-block;
+border-right: 1px solid  rgba(0, 173, 238, 0.4);
+height: 100%;
+width: 200px;
+position: fixed;
+}
+main
+{
+margin-left: 200px;
+padding-left: 20px;
+padding-right:20px;
+
+}
+aside>img
+{
+  height: 120px;
+  display: block;
+justify-content: center;
+margin-left:auto;
+margin-right:auto;
+ 
+}
+li
+{
+  text-align: center;
+  text-transform: uppercase;
+  box-sizing: content-box;
+  border: 1px solid rgba(0, 173, 238, 0.4);
+  width: 40%;
+  list-style-type:none;
+  display:flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  border-spacing: 10px;
+  border-radius: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+ul
+{
+  text-align: center;
+}
+a:last-child
+{
+  font-weight: bold;
+  color: #00ADEE;
+  text-decoration: none;
+}
+h2
+{
+  color: #8CC36F;
+}
+i
+{
+  margin: auto;
+  padding: 30%;
+}
+div.contact-us:last-child{
+  margin-bottom: 0;  
+}
+nav
+{
+  border-bottom-style: solid;
+  padding-inline: 10px;
+}
+header > img
+{
+  height: 100px;
+  margin-bottom: 20px;
+}
+li:first-child
+{
+  text-decoration-line: underline;
+}
+#what-we-do
+{
+  width: 33%;
+  display: inline-block;
+  border: 1px solid rgba(170, 239, 135, 0.8);
+  padding-top: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  
+}
+#our-work
+{
+  width: 33%;
+  display: inline-block;
+  border: 1px solid rgba(170, 239, 135, 0.8);
+  padding-top: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  
+}
+#contact-us
+{
+  width: 33%;
+  display: inline-block;
+  border: 1px solid rgba(170, 239, 135, 0.8);
+  padding-top: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  
+  
+
+}
