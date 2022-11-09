@@ -1,0 +1,77 @@
+img
+{
+    height: 300px
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  border: 5px solid red;
+  max-width: 100%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}  
+  
+div{
+    
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+}
+  
+body
+{
+    background-color: tomato;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+h1
+{
+font-size: 100px;
+color: rgb(251, 232, 62);
+text-align: center;
+
+
+
+
+}
+h2
+{
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+h3{
+    
+
+}
+q::before,
+q::after {
+  animation: dancing 1s linear infinite;
+  display: inline-block;
+  transform: rotate(13deg);
+}
+
+@keyframes dancing {
+  0% {
+    transform: rotate(13deg) scale(2);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-13deg) scale(2);
+  }
+
+  75% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(13deg) scale(2);
+  }
+}
+q {
+  quotes: "‘" "’" "“" "”" "‘" "’" "“" "”";
+
+
