@@ -1,5 +1,37 @@
- 
+ body {
+   display: flex; /* turn it into a flexbox container */
+   flex-direction: column; /* direction is column (the default is rows) */
+   align-items: center; /*center all the items */
+ }
+ #hero footer {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+ #featured section 
+ {
+   display:flex;
+ }
+ #featured section article div {
+   display:flex;
+   justify-content: space-evenly;
+ }
+ #all-items section article {
+   display: flex;
+   align-items: center;
+ }
+/* 
+ #all-items section article div: last-child {
+   flex-basis: 80%;
+ } */
 
+ #all-items section article:nth-child(even) div:first-child {
+   order: 1;
+ }
+ #all-items section article:nth-child(even)
+ {
+   flex-direction: row-reverse;
+ }
 
 /***** enter flexbox CSS above this line *****/
 
