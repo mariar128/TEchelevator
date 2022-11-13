@@ -5,6 +5,7 @@ body {
 }
 
 .container {
+  flex-wrap: wrap;
   background-color: #F0F0F0;
   width: 350px;
   padding: 20px;

@@ -4,6 +4,8 @@ body {
 }
 
 header {
+  display: flex;
+  flex-direction: row;
   background-color: #F0F0F0;
   padding: 20px;
 }
@@ -13,12 +15,16 @@ header {
 }
 
 ul {
+  display: flex;
+  flex-direction: row;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
 li {
+  display: flex;
+  flex-direction: row;
   font-family: 'Oswald', sans-serif;
   font-size: 20px;
   text-transform: uppercase;
@@ -37,3 +43,4 @@ a:hover {
   color: #00AFEF;
   text-decoration: underline;
 }
+

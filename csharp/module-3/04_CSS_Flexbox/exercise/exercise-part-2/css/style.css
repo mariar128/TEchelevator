@@ -1,4 +1,6 @@
 body {
+  display: flex;
+  flex-direction: row;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -7,19 +9,36 @@ body {
 }
 
 #left-panel {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 65%;
+  flex-basis: 35%;
   background-color: #F7F7F7;
 }
 
 ul.social-icons {
+  display: flex;
+  flex-direction: row;
+align-items: flex-end;
+  justify-content: space-between;
   list-style-type: none;
   margin: 20px 20px;
   padding: 0;
 }
 
-nav {}
+nav {
+  flex-grow: 1;
+  align-items: flex-end;
+}
 
-#right-panel {}
-
+#right-panel {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
 /* YOU WON'T NEED TO CHANGE ANY STYLES BELOW THIS LINE */
 
 h1,
