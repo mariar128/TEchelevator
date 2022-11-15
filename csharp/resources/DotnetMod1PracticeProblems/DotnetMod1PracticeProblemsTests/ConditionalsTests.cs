@@ -61,10 +61,7 @@ namespace Exercises.Tests
         [DataRow(-173, -71, -244)]
         [DataRow(163, 163, 652)]
         [DataRow(118, -111, 7)]
-        public void SumDouble(int input1, int input2, int output)
-        {
-            Assert.AreEqual(output, exercises.SumDouble(input1, input2), $"Input: SumDouble ({input1.ToString()}, {input2.ToString()})");
-        }
+        public void SumDouble(int input1, int input2, int output) => Assert.AreEqual(output, exercises.SumDouble(input1, input2), $"Input: SumDouble ({input1.ToString()}, {input2.ToString()})");
         /*
          IcyHot(120, -1) → true
          IcyHot(-1, 120) → true
@@ -219,10 +216,7 @@ namespace Exercises.Tests
         [DataRow(false, true, false, true)]
         [DataRow(false, false, true, false)]
         [DataRow(false, false, false, true)]
-        public void AnswerCell(bool ip1, bool ip2, bool ip3, bool op)
-        {
-            Assert.AreEqual(op, exercises.AnswerCell(ip1, ip2, ip3), $"Input: AnswerCell ({ip1}, {ip2}, {ip3})");
-        }
+        public void AnswerCell(bool ip1, bool ip2, bool ip3, bool op) => Assert.AreEqual(op, exercises.AnswerCell(ip1, ip2, ip3), $"Input: AnswerCell ({ip1}, {ip2}, {ip3})");
 
         /*
          TeaParty(6, 8) → 1

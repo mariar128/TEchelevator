@@ -15,7 +15,14 @@ namespace DotnetMod1PracticeProblems
  */
         public bool FirstLast6(int[] nums)
         {
-            return false;
+           if(nums[0] == 6 || nums[nums.Length- 1] == 6)
+            {
+                return true;
+            }
+           else
+            {
+                return false;
+            }
         }
 
         /*
@@ -27,7 +34,14 @@ namespace DotnetMod1PracticeProblems
  */
         public bool SameFirstLast(int[] nums)
         {
-            return false;
+           if(nums.Length >= 1 && nums[0] == nums[nums.Length - 1])
+            {
+                return true;
+            }
+           else
+            {
+                return false;
+            }
         }
 
         /*
@@ -39,8 +53,16 @@ namespace DotnetMod1PracticeProblems
         */
         public bool CommonEnd(int[] a, int[] b)
         {
-            return false;
+            if(a[0] == b[0] || a[a.Length - 1] == b[b.Length - 1]) // if a & b have the same first element (index 0) OR the same last element (length - 1)
+            { 
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
 
         /*
          Given an array of ints, return the sum of the first 2 elements in the array. If the array length
@@ -51,7 +73,21 @@ namespace DotnetMod1PracticeProblems
          */
         public int Sum2(int[] nums)
         {
+            if (nums.Length >= 2) // first 2 elements in the array is Length >= 2
+                return (nums[0] + nums[1]); // returning the sum of the first and last index 
+            if (nums.Length == 1) // if the length of the array is 1
+                return nums[0]; // return the 0 index (bc index 0 = length 1)
             return 0;
+        }
+
+        public object Has22(int[] vs)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Sum28(int[] vs)
+        {
+            throw new NotImplementedException();
         }
 
         /*
@@ -60,21 +96,31 @@ namespace DotnetMod1PracticeProblems
          Has22([1, 2, 1, 2]) → false
          Has22([2, 1, 2]) → false
          */
-        public bool Has22(int[] nums)
-        {
-            return false;
-        }
+        //public bool Has22(int[] nums)
+        //{
+        //    for (int i = 0; i < nums.Length; i++) // setting up for loop to check if the array contains a 2 
+        //    {
+        //        if (nums[i] == 2 && i < nums.Length && nums[i - 1] == 2)
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //}
 
-        /*
-         Given an array of ints, return true if the sum of all the 2's in the array is exactly 8.
-         Sum28([2, 3, 2, 2, 4, 2]) → true
-         Sum28([2, 3, 2, 2, 4, 2, 2]) → false
-         Sum28([1, 2, 3, 4]) → false
-         */
-        public bool Sum28(int[] nums)
-        {
-            return false;
-        }
+        ///*
+        // Given an array of ints, return true if the sum of all the 2's in the array is exactly 8.
+        // Sum28([2, 3, 2, 2, 4, 2]) → true
+        // Sum28([2, 3, 2, 2, 4, 2, 2]) → false
+        // Sum28([1, 2, 3, 4]) → false
+        // */
+        //public bool Sum28(int[] nums)
+        //{
+        //    return false;
+        //}
 
     }
 }

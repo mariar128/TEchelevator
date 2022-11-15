@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -16,6 +17,11 @@ namespace DotnetMod1PracticeProblems
         public List<string> No4LetterWords(string[] stringArray)
         {
             return new List<string>();
+        }
+
+        public ICollection List2Array(List<string> list)
+        {
+            throw new NotImplementedException();
         }
 
         /*
