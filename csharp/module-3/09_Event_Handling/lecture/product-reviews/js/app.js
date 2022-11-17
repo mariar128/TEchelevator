@@ -66,6 +66,22 @@ setPageDescription();
 // Display all of the product reviews on our page.
 displayReviews();
 
+//find the target of my event(I want to click on the description)
+const descriptionParagraph = document.querySelector('.description');
+
+descriptionParagraph.addEventListener('click', toggleDescriptionEdit);
+
+const inputDescription = document.getElementById('inputDesc')
+inputDescription.addEventListener('keyup', (event) =>
+{
+if(event.key === 'Enter')
+{exitDescriptionEdit(event.target, true)
+}
+if(event.key === 'Escape') {
+  exitDescriptionEdit(event.target, false);
+}
+});
+
 /**
  * Hide the description and show the text box.
  *
