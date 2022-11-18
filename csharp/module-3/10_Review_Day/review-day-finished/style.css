@@ -1,0 +1,13 @@
+#borderedPara { 
+    padding: 5px;
+    border: 2px dashed black;
+}
+
+.container { 
+    padding: 5px; 
+    border: 1px solid black;
+}
+
+.greenBackground {
+    background-color: rgb(78, 214, 169);
+}
