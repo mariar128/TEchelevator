@@ -1,0 +1,10 @@
+function that takes in a string, it will return that same string but in reverse. "cat" -> "tac"
+public string ReverseString(string str)
+{
+    for(int str.Length - 1; i < str.Length; i++)
+    {
+        if
+    }
+}
+for loop with i++, add them backwards, 
+loop through backwards, i--, set the new string to location in the array that you are at at the end of your new string. if youre at length - 1 index, loop through and put it onto a new string.

@@ -20,6 +20,7 @@ const groceries = [
 function setPageTitle() {
   const title = document.getElementById('title');
   title.innerText = pageTitle;
+
 }
 
 /**
@@ -36,3 +37,45 @@ function displayGroceries() {
     ul.appendChild(li);
   });
 }
+window.addEventListener('DOMContentLoaded', (event) => {
+setPageTitle();
+displayGroceries();
+
+let listItems = document.querySelectorAll('li');
+listItems.forEach((item) => {
+  item.addEventListener('click', event => {
+    if(item.className != 'completed')
+    {
+    item.className = 'completed'
+    item.lastChild.className = 'completed'
+    }
+  })
+});
+listItems.forEach((item) => {
+  item.addEventListener('dblclick', event => {
+    if(item.className == 'completed')
+    {
+    item.className = 'incomplete'
+    item.lastChild.className = 'incomplete'
+    }
+  })
+});
+let clickButton = document.getElementById('toggleAll');
+clickButton.addEventListener('click', event => {
+listItems.forEach((item) => {
+item.className = 'completed'
+item.lastChild.className = 'completed'
+
+})
+});
+
+clickButton.addEventListener('dblclick', event => {
+  listItems.forEach((item) => {
+  item.className = 'incomplete'
+  item.lastChild.className = 'incomplete'
+  
+  })
+  });
+
+
+});
