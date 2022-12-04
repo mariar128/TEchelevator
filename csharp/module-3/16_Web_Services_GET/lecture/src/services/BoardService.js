@@ -8,6 +8,7 @@ export default {
 
   getBoards() {
     return http.get('/boards');
+    //passes the Promise back to the component
   },
 
   getCards(boardID) {
